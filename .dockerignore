@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+coverage
+.git
+functions
+dist
+*.tsbuildinfo
+.firebase
+.env
+.env.*.local

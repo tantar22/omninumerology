@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Tier {
+  FREE
+  PRO
+  ORACLE
+}
+
+enum ProfileType {
+  SELF
+  PARTNER
+  TEAM_MEMBER
+}
+
+model User {
+  id           String              @id @default(cuid())
+  email        String              @unique
+  passwordHash String
+  tier         Tier                @default(FREE)
+  createdAt    DateTime            @default(now())
+  updatedAt    DateTime            @updatedAt
+
+  profiles           Profile[]
+  synchronicityLogs  SynchronicityLog[]
+  compatibilityPairs CompatibilityPair[] @relation("PairOwner")
+
+  @@index([email])
+}
+
+model Profile {
+  id             String      @id @default(cuid())
+  userId         String
+  profileType    ProfileType @default(SELF)
+  fullBirthName  String
+  currentName    String?
+  birthDate      DateTime
+  birthTime      String?
+  birthCity      String?
+  computedMatrix Json?
+  isArchived     Boolean     @default(false)
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+
+  user                  User                @relation(fields: [userId], references: [id], onDelete: Cascade)
+  compatibilityPairsAsA CompatibilityPair[] @relation("PairMemberA")
+  compatibilityPairsAsB CompatibilityPair[] @relation("PairMemberB")
+
+  @@index([userId, isArchived])
+}
+
+model SynchronicityLog {
+  id             String   @id @default(cuid())
+  userId         String
+  detectedNumber Int
+  sourceType     String
+  contextNotes   String?
+  personalYear   Int?
+  personalMonth  Int?
+  personalDay    Int?
+  personalHour   Int?
+  timestamp      DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, timestamp])
+  @@index([detectedNumber])
+}
+
+model CompatibilityPair {
+  id            String   @id @default(cuid())
+  userId        String
+  profileAId    String
+  profileBId    String
+  synastryScore Int
+  analysisData  Json?
+  createdAt     DateTime @default(now())
+
+  owner    User    @relation("PairOwner", fields: [userId], references: [id], onDelete: Cascade)
+  profileA Profile @relation("PairMemberA", fields: [profileAId], references: [id], onDelete: Cascade)
+  profileB Profile @relation("PairMemberB", fields: [profileBId], references: [id], onDelete: Cascade)
+
+  @@unique([profileAId, profileBId])
+  @@index([userId])
+  @@index([synastryScore])
+}

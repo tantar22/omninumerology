@@ -1,0 +1,9 @@
+{
+  "hosting": {
+    "public": "out",
+    "predeploy": ["npm run export"],
+    "rewrites": [
+      { "source": "**", "destination": "/index.html" }
+    ]
+  }
+}
