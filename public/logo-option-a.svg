@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <defs>
+    <linearGradient id="gA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D98E"/>
+      <stop offset="50%" style="stop-color:#D4A853"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+  </defs>
+  <!-- OPTION A: Cosmic Circle -->
+  <text x="150" y="20" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="2">OPTION A</text>
+  
+  <!-- Outer circle with dots -->
+  <circle cx="50" cy="55" r="38" fill="none" stroke="url(#gA)" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="50" cy="20" r="2" fill="#D4A853" opacity="0.7"/>
+  <circle cx="85" cy="55" r="2" fill="#D4A853" opacity="0.7"/>
+  <circle cx="50" cy="90" r="2" fill="#D4A853" opacity="0.7"/>
+  <circle cx="15" cy="55" r="2" fill="#D4A853" opacity="0.7"/>
+  
+  <!-- Inner diamond -->
+  <polygon points="50,28 72,55 50,82 28,55" fill="none" stroke="url(#gA)" stroke-width="1" opacity="0.3"/>
+  
+  <!-- ST -->
+  <text x="50" y="62" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="url(#gA)">ST</text>
+  
+  <!-- Wordmark -->
+  <text x="110" y="60" font-family="Georgia, serif" font-size="22" fill="#D4A853" letter-spacing="1">Numerology</text>
+</svg>

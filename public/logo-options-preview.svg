@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D98E"/>
+      <stop offset="50%" style="stop-color:#D4A853"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D4A853;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#D4A853;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="500" fill="#0A0B10"/>
+  
+  <!-- Title -->
+  <text x="300" y="35" text-anchor="middle" font-family="Georgia, serif" font-size="18" fill="#D4A853" letter-spacing="3">STNUMEROLOGY LOGO OPTIONS</text>
+  <text x="300" y="55" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#666">Select your preferred design</text>
+  
+  <!-- OPTION A: Cosmic Circle -->
+  <text x="100" y="95" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="2">A</text>
+  <circle cx="100" cy="145" r="38" fill="none" stroke="url(#g)" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="100" cy="110" r="2" fill="#D4A853" opacity="0.7"/>
+  <circle cx="135" cy="145" r="2" fill="#D4A853" opacity="0.7"/>
+  <circle cx="100" cy="180" r="2" fill="#D4A853" opacity="0.7"/>
+  <circle cx="65" cy="145" r="2" fill="#D4A853" opacity="0.7"/>
+  <polygon points="100,118 122,145 100,172 78,145" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <text x="100" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="28" font-weight="700" fill="url(#g)">ST</text>
+  <text x="100" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#D4A853">Cosmic Circle</text>
+  
+  <!-- OPTION B: Lotus Mandala -->
+  <text x="230" y="95" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="2">B</text>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(0 230 145)"/>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(45 230 145)"/>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(90 230 145)"/>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(135 230 145)"/>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(180 230 145)"/>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(225 230 145)"/>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(270 230 145)"/>
+  <ellipse cx="230" cy="125" rx="8" ry="18" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.4" transform="rotate(315 230 145)"/>
+  <circle cx="230" cy="145" r="16" fill="#0A0B10" stroke="url(#g)" stroke-width="1.5"/>
+  <text x="230" y="151" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700" fill="url(#g)">ST</text>
+  <text x="230" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#D4A853">Lotus Mandala</text>
+  
+  <!-- OPTION C: Geometric Minimal -->
+  <text x="370" y="95" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="2">C</text>
+  <polygon points="370,110 400,125 400,165 370,180 340,165 340,125" fill="none" stroke="url(#g)" stroke-width="2" opacity="0.6"/>
+  <polygon points="370,120 395,160 345,160" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <text x="370" y="152" text-anchor="middle" font-family="Georgia, serif" font-size="26" font-weight="700" fill="url(#g)">ST</text>
+  <circle cx="370" cy="110" r="3" fill="#D4A853"/>
+  <circle cx="400" cy="165" r="2" fill="#D4A853" opacity="0.6"/>
+  <circle cx="340" cy="165" r="2" fill="#D4A853" opacity="0.6"/>
+  <text x="370" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#D4A853">Geometric</text>
+  
+  <!-- OPTION D: Sacred Geometry -->
+  <text x="150" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="2">D</text>
+  <circle cx="150" cy="310" r="20" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <circle cx="150" cy="290" r="20" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <circle cx="150" cy="330" r="20" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <circle cx="133" cy="300" r="20" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <circle cx="167" cy="300" r="20" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <circle cx="133" cy="320" r="20" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <circle cx="167" cy="320" r="20" fill="none" stroke="url(#g)" stroke-width="1" opacity="0.3"/>
+  <circle cx="150" cy="310" r="14" fill="#0A0B10" stroke="url(#g)" stroke-width="2"/>
+  <text x="150" y="316" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="url(#g)">ST</text>
+  <text x="150" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#D4A853">Sacred Geometry</text>
+  
+  <!-- OPTION E: Mystical Eye -->
+  <text x="300" y="260" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="2">E</text>
+  <path d="M265,310 Q300,280 335,310 Q300,340 265,310" fill="none" stroke="url(#g)" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="300" cy="310" rx="22" ry="18" fill="url(#eyeGlow)"/>
+  <circle cx="300" cy="310" r="18" fill="none" stroke="url(#g)" stroke-width="1.5" opacity="0.5"/>
+  <circle cx="300" cy="310" r="12" fill="#0A0B10" stroke="url(#g)" stroke-width="1"/>
+  <text x="300" y="315" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="url(#g)">ST</text>
+  <line x1="300" y1="280" x2="300" y2="273" stroke="#D4A853" stroke-width="1" opacity="0.4"/>
+  <line x1="280" y1="285" x2="275" y2="279" stroke="#D4A853" stroke-width="1" opacity="0.3"/>
+  <line x1="320" y1="285" x2="325" y2="279" stroke="#D4A853" stroke-width="1" opacity="0.3"/>
+  <text x="300" y="360" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#D4A853">Mystical Eye</text>
+  
+  <!-- Footer -->
+  <text x="300" y="420" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#666">Reply with A, B, C, D, or E to select</text>
+  <text x="300" y="440" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#444">All logos use gold gradient (#D4A853) on dark background</text>
+</svg>

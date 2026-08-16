@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <defs>
+    <linearGradient id="gE" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D98E"/>
+      <stop offset="50%" style="stop-color:#D4A853"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    <radialGradient id="eyeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D4A853;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#D4A853;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <!-- OPTION E: Mystical Eye -->
+  <text x="150" y="20" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#888" letter-spacing="2">OPTION E</text>
+  
+  <!-- Eye shape (almond) -->
+  <path d="M15,55 Q50,25 85,55 Q50,85 15,55" fill="none" stroke="url(#gE)" stroke-width="2" opacity="0.6"/>
+  
+  <!-- Inner glow -->
+  <ellipse cx="50" cy="55" rx="22" ry="18" fill="url(#eyeGlow)"/>
+  
+  <!-- Iris circle -->
+  <circle cx="50" cy="55" r="18" fill="none" stroke="url(#gE)" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Pupil with ST -->
+  <circle cx="50" cy="55" r="12" fill="#0A0B10" stroke="url(#gE)" stroke-width="1"/>
+  <text x="50" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="16" font-weight="700" fill="url(#gE)">ST</text>
+  
+  <!-- Eyelash accents -->
+  <line x1="50" y1="25" x2="50" y2="18" stroke="#D4A853" stroke-width="1" opacity="0.4"/>
+  <line x1="30" y1="30" x2="25" y2="24" stroke="#D4A853" stroke-width="1" opacity="0.3"/>
+  <line x1="70" y1="30" x2="75" y2="24" stroke="#D4A853" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Wordmark -->
+  <text x="110" y="60" font-family="Georgia, serif" font-size="22" fill="#D4A853" letter-spacing="1">Numerology</text>
+</svg>
