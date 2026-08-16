@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5D98E;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#D4A853;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="innerGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8DC;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#D4A853;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer circle - numerology wheel -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.4"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.2"/>
+
+  <!-- 9 dot positions around the circle (numerology: 9 is completion) -->
+  <circle cx="100" cy="12" r="3" fill="#D4A853" opacity="0.6"/>
+  <circle cx="153" cy="32" r="2.5" fill="#D4A853" opacity="0.5"/>
+  <circle cx="188" cy="100" r="3" fill="#D4A853" opacity="0.6"/>
+  <circle cx="153" cy="168" r="2.5" fill="#D4A853" opacity="0.5"/>
+  <circle cx="100" cy="188" r="3" fill="#D4A853" opacity="0.6"/>
+  <circle cx="47" cy="168" r="2.5" fill="#D4A853" opacity="0.5"/>
+  <circle cx="12" cy="100" r="3" fill="#D4A853" opacity="0.6"/>
+  <circle cx="47" cy="32" r="2.5" fill="#D4A853" opacity="0.5"/>
+
+  <!-- Subtle connecting lines -->
+  <line x1="100" y1="12" x2="188" y2="100" stroke="#D4A853" stroke-width="0.5" opacity="0.15"/>
+  <line x1="188" y1="100" x2="100" y2="188" stroke="#D4A853" stroke-width="0.5" opacity="0.15"/>
+  <line x1="100" y1="188" x2="12" y2="100" stroke="#D4A853" stroke-width="0.5" opacity="0.15"/>
+  <line x1="12" y1="100" x2="100" y2="12" stroke="#D4A853" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Inner geometric shape - sacred geometry feel -->
+  <polygon points="100,25 175,100 100,175 25,100" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- ST Letters -->
+  <text x="100" y="115" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="url(#goldGrad)" letter-spacing="-2">ST</text>
+
+  <!-- Subtle glow effect behind text -->
+  <text x="100" y="115" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700" fill="url(#innerGlow)" letter-spacing="-2" opacity="0.3">ST</text>
+</svg>

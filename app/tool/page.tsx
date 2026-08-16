@@ -66,13 +66,16 @@ export default function ToolPage() {
             </Link>
             <LanguageSwitcher />
           </nav>
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl"
+            className="flex flex-col items-center"
           >
-            ST<span className="text-celestial-gold">Numerology</span>
-          </motion.h1>
+            <img src="/logo.svg" alt="STNumerology" className="mb-4 h-24 w-24" />
+            <h1 className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl">
+              ST<span className="text-celestial-gold">Numerology</span>
+            </h1>
+          </motion.div>
           <p className="mt-2 text-sm font-medium tracking-wide text-celestial-gold/90">Guidance by Supriya Tambe</p>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-white/60">{t('app.subtitle')}</p>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">

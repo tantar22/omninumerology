@@ -30,8 +30,11 @@ export default function HomePage() {
       <CosmicBackground segment="landing" />
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:py-12">
         <nav aria-label="Primary navigation" className="mb-12 flex items-center justify-between gap-4">
-          <Link href="/" className="font-serif text-xl font-bold text-white transition-colors hover:text-celestial-gold">
-            ST<span className="text-celestial-gold">Numerology</span>
+          <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+            <img src="/logo-48.svg" alt="STNumerology" className="h-10 w-10" />
+            <span className="font-serif text-xl font-bold text-white">
+              ST<span className="text-celestial-gold">Numerology</span>
+            </span>
           </Link>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />

@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: 'STNumerology | Supriya Tambe',
   description:
     'Personalised numerology insights and aura cleansing guidance by Supriya Tambe. Explore your core numbers, life path, and energy balance.',
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/logo-48.svg',
+  },
 };
 
 export const viewport: Viewport = {
