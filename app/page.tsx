@@ -1,288 +1,146 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { postJson } from '@/hooks/useMatrix';
-import { useMatrixStore } from '@/stores/useMatrixStore';
-import type { UnifiedMatrix } from '@/engine';
-import { Button } from '@/components/ui/button';
+import { ArrowRight, Compass, Gem, Heart, Moon, Sparkles, Stars } from 'lucide-react';
+import { CosmicBackground } from '@/components/CosmicBackground';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { MatrixWheel } from '@/components/MatrixWheel';
-import { LoShuGrid } from '@/components/LoShuGrid';
-import { PersonalHourClock } from '@/components/PersonalHourClock';
-import { NameOptimizer } from '@/components/NameOptimizer';
-import { SynastryMatrix } from '@/components/SynastryMatrix';
-import { OracleChat } from '@/components/OracleChat';
-import { CoreNumbers } from '@/components/CoreNumbers';
-import { EnergyRemedies } from '@/components/EnergyRemedies';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
-import { PdfReportButton } from '@/components/PdfReport';
-import { CosmicBackground, type CosmicSegment } from '@/components/CosmicBackground';
-import { DateSelect } from '@/components/DateSelect';
-import { AssistantWidget } from '@/components/AssistantWidget';
 import { useT } from '@/lib/i18n-client';
 
-export default function Home() {
-  const { input, targetDate, matrix, setInput, setTargetDate, setMatrix, setError, loading, setLoading, error } =
-    useMatrixStore();
-  const t = useT();
-  const [activeTab, setActiveTab] = useState('overview');
-  const segment: CosmicSegment = matrix ? (activeTab as CosmicSegment) : 'landing';
+const serviceIcons = [Stars, Compass, Gem, Sparkles] as const;
+const serviceKeys = [
+  'about.services.reading',
+  'about.services.name',
+  'about.services.vedic',
+  'about.services.aura',
+] as const;
 
-  async function onSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (!input.fullName.trim() || !input.birthDate) return;
-    setLoading(true);
-    setError(null);
-    try {
-      const result = await postJson<UnifiedMatrix>('/api/matrix/calculate', {
-        ...input,
-        targetDate,
-      });
-      setMatrix(result);
-    } catch (err) {
-      setError((err as Error).message);
-    } finally {
-      setLoading(false);
-    }
-  }
+const stepNumbers = ['01', '02', '03'] as const;
+const stepKeys = [
+  'about.process.step1',
+  'about.process.step2',
+  'about.process.step3',
+] as const;
+
+export default function HomePage() {
+  const t = useT();
 
   return (
-    <main className="relative min-h-screen">
-      <CosmicBackground segment={segment} />
-      <div className="relative z-10 mx-auto max-w-6xl px-4 py-10">
-        <header className="mb-8 text-center">
-          <nav aria-label="Primary navigation" className="mb-8 flex flex-wrap items-center justify-center gap-2">
-            <Link
-              href="/about"
-              className="rounded-md border border-celestial-gold/40 px-3 py-2 text-sm font-medium text-celestial-gold transition-colors hover:border-celestial-gold hover:bg-celestial-gold/10"
-            >
-              About Supriya &amp; Services
-            </Link>
-            <a
-              href="#numerology-tool"
-              className="rounded-md px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
-            >
-              Numerology Tool
-            </a>
-          </nav>
-          <motion.h1
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl"
-          >
+    <main className="relative min-h-screen overflow-hidden">
+      <CosmicBackground segment="landing" />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:py-12">
+        <nav aria-label="Primary navigation" className="mb-12 flex items-center justify-between gap-4">
+          <Link href="/" className="font-serif text-xl font-bold text-white transition-colors hover:text-celestial-gold">
             Omni<span className="text-celestial-gold">Numerology</span>
-          </motion.h1>
-          <p className="mt-2 text-sm font-medium tracking-wide text-celestial-gold/90">Guidance by Supriya Tambe</p>
-          <p className="mx-auto mt-2 max-w-2xl text-sm text-white/60">{t('app.subtitle')}</p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+          </Link>
+          <div className="flex items-center gap-3">
             <LanguageSwitcher />
-            <PdfReportButton disabled={!matrix} />
+            <Link
+              href="/tool"
+              className="inline-flex items-center gap-2 rounded-md border border-celestial-gold/40 px-3 py-2 text-sm font-medium text-celestial-gold transition-colors hover:border-celestial-gold hover:bg-celestial-gold/10"
+            >
+              {t('about.hero.useTool')} <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-        </header>
+        </nav>
 
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
-          <Card id="numerology-tool" className="mb-8 scroll-mt-6">
-            <CardHeader>
-              <CardTitle>{t('form.title')}</CardTitle>
+        <section className="grid items-center gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
+          <div>
+            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-celestial-gold/30 bg-celestial-gold/10 px-3 py-1 text-sm font-medium text-celestial-goldBright">
+              <Moon className="h-4 w-4" /> {t('about.hero.badge')}
+            </p>
+            <h1 className="font-serif text-4xl font-bold leading-tight text-white sm:text-5xl">
+              {t('about.hero.title')}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/70">
+              {t('about.hero.welcome')} <span className="font-semibold text-white">{t('about.hero.name')}</span>.{' '}
+              {t('about.hero.desc')}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="#services"
+                className="inline-flex items-center gap-2 rounded-md bg-celestial-gold px-5 py-3 text-sm font-semibold text-obsidian transition-colors hover:bg-celestial-goldBright"
+              >
+                {t('about.hero.exploreServices')} <ArrowRight className="h-4 w-4" />
+              </a>
+              <Link
+                href="/tool"
+                className="inline-flex items-center gap-2 rounded-md border border-obsidian-border px-5 py-3 text-sm font-semibold text-white/80 transition-colors hover:border-celestial-violet/60 hover:text-white"
+              >
+                {t('about.hero.useTool')}
+              </Link>
+            </div>
+          </div>
+
+          <Card className="border-celestial-gold/25 bg-gradient-to-b from-celestial-gold/10 to-obsidian-soft/80 shadow-glow-gold">
+            <CardHeader className="pb-2">
+              <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-celestial-gold/15 text-celestial-goldBright">
+                <Heart className="h-6 w-6" />
+              </div>
+              <CardTitle className="text-2xl">{t('about.card.title')}</CardTitle>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={onSubmit} className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <div className="lg:col-span-2">
-                  <Label htmlFor="fullName">{t('form.fullName')}</Label>
-                  <Input
-                    id="fullName"
-                    value={input.fullName}
-                    onChange={(e) => setInput({ fullName: e.target.value })}
-                    placeholder="e.g. John Alexander Smith"
-                    className="mt-1"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="currentName">{t('form.currentName')}</Label>
-                  <Input
-                    id="currentName"
-                    value={input.currentName ?? ''}
-                    onChange={(e) => setInput({ currentName: e.target.value })}
-                    className="mt-1"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="birthDate">{t('form.birthDate')}</Label>
-                  <DateSelect
-                    value={input.birthDate}
-                    onChange={(iso) => setInput({ birthDate: iso })}
-                    labels={{ day: t('form.day'), month: t('form.month'), year: t('form.year') }}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="birthTime">{t('form.birthTime')}</Label>
-                  <Input
-                    id="birthTime"
-                    type="time"
-                    value={input.birthTime ?? ''}
-                    onChange={(e) => setInput({ birthTime: e.target.value })}
-                    className="mt-1"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="birthCity">{t('form.birthCity')}</Label>
-                  <Input
-                    id="birthCity"
-                    value={input.birthCity ?? ''}
-                    onChange={(e) => setInput({ birthCity: e.target.value })}
-                    className="mt-1"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="targetDate">{t('form.targetDate')}</Label>
-                  <DateSelect
-                    value={targetDate}
-                    onChange={setTargetDate}
-                    labels={{ day: t('form.day'), month: t('form.month'), year: t('form.year') }}
-                  />
-                </div>
-                <div className="flex items-end">
-                  <Button type="submit" variant="gold" className="w-full" disabled={loading}>
-                    {loading ? t('form.calculating') : t('form.calculate')}
-                  </Button>
-                </div>
-              </form>
-              {error && <p className="mt-3 text-sm text-celestial-rose">{error}</p>}
+            <CardContent className="space-y-4 text-sm leading-relaxed text-white/70">
+              <p>{t('about.card.p1')}</p>
+              <p>{t('about.card.p2')}</p>
+              <p className="border-t border-white/10 pt-4 text-xs text-white/50">
+                {t('about.card.disclaimer')}
+              </p>
             </CardContent>
           </Card>
-        </motion.div>
+        </section>
 
-        {matrix && (
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-            <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="flex-wrap">
-                <TabsTrigger value="overview">{t('tabs.overview')}</TabsTrigger>
-                <TabsTrigger value="wheel">{t('tabs.wheel')}</TabsTrigger>
-                <TabsTrigger value="loshu">{t('tabs.loshu')}</TabsTrigger>
-                <TabsTrigger value="clock">{t('tabs.clock')}</TabsTrigger>
-                <TabsTrigger value="optimizer">{t('tabs.optimizer')}</TabsTrigger>
-                <TabsTrigger value="energy">{t('tabs.energy')}</TabsTrigger>
-                <TabsTrigger value="synastry">{t('tabs.synastry')}</TabsTrigger>
-                <TabsTrigger value="oracle">{t('tabs.oracle')}</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="overview">
-                <div className="mb-6 flex flex-wrap gap-2">
-                  <Badge tone="gold">
-                    {t('badge.lifePath')} {matrix.rootRulers.lifePath}
-                  </Badge>
-                  <Badge tone="violet">
-                    {t('badge.expression')} {matrix.rootRulers.expression}
-                  </Badge>
-                  <Badge tone="cyan">
-                    {t('badge.driver')} {matrix.rootRulers.driver}
-                  </Badge>
-                  <Badge tone="muted">
-                    {t('badge.conductor')} {matrix.rootRulers.conductor}
-                  </Badge>
-                </div>
-                <CoreNumbers />
-              </TabsContent>
-
-              <TabsContent value="wheel">
-                <Card>
-                  <CardContent className="pt-5">
-                    <MatrixWheel />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="loshu">
-                <Card>
-                  <CardContent className="pt-5">
-                    <LoShuGrid />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="clock">
-                <Card>
-                  <CardContent className="pt-5">
-                    <PersonalHourClock />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="optimizer">
-                <Card>
-                  <CardContent className="pt-5">
-                    <NameOptimizer />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="energy">
-                <Card>
-                  <CardContent className="pt-5">
-                    <EnergyRemedies />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="synastry">
-                <Card>
-                  <CardContent className="pt-5">
-                    <SynastryMatrix />
-                  </CardContent>
-                </Card>
-              </TabsContent>
-
-              <TabsContent value="oracle">
-                <OracleChat />
-              </TabsContent>
-            </Tabs>
-          </motion.div>
-        )}
-
-        {matrix && (
-          <div
-            id="omni-report"
-            aria-hidden
-            className="pointer-events-none absolute left-[-10000px] top-0 w-[900px] bg-[#0A0B10] p-8 text-white"
-          >
-            <div className="mb-8 border-b border-white/10 pb-6">
-              <h1 className="font-serif text-3xl font-bold">{t('report.title')}</h1>
-              <p className="mt-1 text-sm text-white/60">{t('report.generated')}</p>
-              <p className="mt-3 text-sm text-white/80">
-                {input.fullName}
-                {input.birthDate ? ` · ${input.birthDate}` : ''}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <Badge tone="gold">
-                  {t('badge.lifePath')} {matrix.rootRulers.lifePath}
-                </Badge>
-                <Badge tone="violet">
-                  {t('badge.expression')} {matrix.rootRulers.expression}
-                </Badge>
-                <Badge tone="cyan">
-                  {t('badge.driver')} {matrix.rootRulers.driver}
-                </Badge>
-                <Badge tone="muted">
-                  {t('badge.conductor')} {matrix.rootRulers.conductor}
-                </Badge>
-              </div>
-            </div>
-            <div className="flex flex-col gap-8">
-              <CoreNumbers />
-              <LoShuGrid />
-              <EnergyRemedies />
-            </div>
+        <section id="services" className="scroll-mt-6 py-20">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-celestial-gold">{t('about.services.label')}</p>
+            <h2 className="mt-3 font-serif text-3xl font-bold text-white sm:text-4xl">{t('about.services.title')}</h2>
+            <p className="mt-4 leading-relaxed text-white/65">{t('about.services.desc')}</p>
           </div>
-        )}
-      </div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {serviceKeys.map((key, i) => {
+              const Icon = serviceIcons[i];
+              return (
+                <Card key={key} className="group transition-colors hover:border-celestial-violet/50">
+                  <CardHeader>
+                    <Icon className="h-6 w-6 text-celestial-gold" />
+                    <CardTitle>{t(`${key}.title`)}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="text-sm leading-relaxed text-white/65">{t(`${key}.desc`)}</CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
 
-      <AssistantWidget matrix={matrix} />
+        <section className="rounded-2xl border border-obsidian-border bg-obsidian-soft/60 p-6 sm:p-8">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-celestial-violetBright">{t('about.process.label')}</p>
+            <h2 className="mt-3 font-serif text-3xl font-bold text-white">{t('about.process.title')}</h2>
+          </div>
+          <ol className="mt-8 grid gap-6 md:grid-cols-3">
+            {stepKeys.map((key, i) => (
+              <li key={key} className="border-t border-white/10 pt-4">
+                <span className="font-serif text-2xl font-bold text-celestial-gold">{stepNumbers[i]}</span>
+                <h3 className="mt-3 font-semibold text-white">{t(`${key}.title`)}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">{t(`${key}.desc`)}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className="py-20 text-center">
+          <Sparkles className="mx-auto h-8 w-8 text-celestial-gold" />
+          <h2 className="mt-4 font-serif text-3xl font-bold text-white">{t('about.cta.title')}</h2>
+          <p className="mx-auto mt-4 max-w-xl leading-relaxed text-white/65">
+            {t('about.cta.desc')}
+          </p>
+          <Link
+            href="/tool"
+            className="mt-7 inline-flex items-center gap-2 rounded-md bg-celestial-violet px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-celestial-violetBright"
+          >
+            {t('about.cta.button')} <ArrowRight className="h-4 w-4" />
+          </Link>
+        </section>
+      </div>
     </main>
   );
 }
