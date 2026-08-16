@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "description": "OmniNumerology - multi-system numerological intelligence and real-time decision platform",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "concurrently -n server,web -c blue,magenta \"npm:dev:server\" \"npm:dev:web\"",
     "dev:web": "next dev -p 3000",
     "dev:server": "tsx watch src/server/index.ts",
     "build": "next build",
     "export": "node scripts/export.mjs",
-    "build:server": "tsc -p tsconfig.server.json",
+    "build:server": "npm run export && tsc -p tsconfig.server.json",
     "start:prod": "node dist/server/index.js",
     "start": "next start -p 3000",
     "start:server": "tsx src/server/index.ts",

@@ -42,6 +42,10 @@ the Express API at an absolute URL configured via `NEXT_PUBLIC_API_BASE`, allowi
 two to live on separate hosts. The core calculation engine is pure TypeScript with no
 external arithmetic dependencies.
 
+For a simpler deployment, the included Render configuration builds that same static
+frontend and serves it from the Express app. In that all-in-one setup, opening the
+Render URL displays OmniNumerology itself and its API remains available at `/api/*`.
+
 ## Getting started
 
 ```bash
@@ -99,10 +103,13 @@ Copy `.env.example` to `.env` and adjust as needed:
 
 See `FIREBASE_DEPLOY.md` for the full split-hosting guide. In short:
 
-1. Deploy the backend (`npm run build:server && npm run start:prod`) to any free Node.js
-   host (Render, Railway, Fly.io, or a VPS) — a `Dockerfile` is included.
-2. Build the frontend against that URL: `NEXT_PUBLIC_API_BASE=<backend-url> npm run export`.
-3. Deploy the static `out/` to Firebase Hosting (free): `firebase deploy --only hosting`.
+1. **All-in-one Render (recommended):** deploy this repository as a Node web service.
+   `render.yaml` supplies the build command, start command, and `/api/health` check.
+   The service URL serves both the web app and its API.
+2. **Split hosting:** deploy the backend (`npm run build:server && npm run start:prod`) to
+   any Node host, then build the frontend against that URL with
+   `NEXT_PUBLIC_API_BASE=<backend-url> npm run export` and deploy `out/` to Firebase
+   Hosting. See `FIREBASE_DEPLOY.md` for details.
 
 ## Disclaimer
 
