@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { postJson } from '@/hooks/useMatrix';
 import { useMatrixStore } from '@/stores/useMatrixStore';
 import type { UnifiedMatrix } from '@/engine';
+import { apiUrl } from '@/lib/api';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -40,13 +41,16 @@ export default function ToolPage() {
     setLoading(true);
     setError(null);
     try {
-      const result = await postJson<UnifiedMatrix>('/api/matrix/calculate', {
+      const result = await postJson<UnifiedMatrix>(apiUrl('/api/matrix/calculate'), {
         ...input,
         targetDate,
       });
       setMatrix(result);
     } catch (err) {
-      setError((err as Error).message);
+      const msg = (err as Error).name === 'AbortError'
+        ? 'Request timed out. The server may be starting up — please try again in 30 seconds.'
+        : (err as Error).message;
+      setError(msg);
     } finally {
       setLoading(false);
     }
