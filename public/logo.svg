@@ -1,67 +1,88 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
   <defs>
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#F5D98E;stop-opacity:1" />
       <stop offset="50%" style="stop-color:#D4A853;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#B8860B;stop-opacity:1" />
     </linearGradient>
-    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#D4A853;stop-opacity:0.15"/>
-      <stop offset="100%" style="stop-color:#D4A853;stop-opacity:0"/>
-    </radialGradient>
+    <clipPath id="lotusClip">
+      <path d="M200,40 C220,80 260,100 280,140 C300,180 280,220 260,240 C240,260 220,280 200,300 C180,280 160,260 140,240 C120,220 100,180 120,140 C140,100 180,80 200,40 Z"/>
+    </clipPath>
   </defs>
 
-  <!-- Outer circle - numerology wheel -->
-  <circle cx="150" cy="150" r="140" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.3"/>
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="190" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.2"/>
 
-  <!-- Sacred Geometry: Flower of Life circles (outer ring) -->
-  <circle cx="150" cy="150" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.15"/>
-  <circle cx="150" cy="90" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.15"/>
-  <circle cx="150" cy="210" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.15"/>
-  <circle cx="98" cy="120" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.15"/>
-  <circle cx="202" cy="120" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.15"/>
-  <circle cx="98" cy="180" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.15"/>
-  <circle cx="202" cy="180" r="60" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.15"/>
+  <!-- Flower of Life pattern (from D) - dense overlapping circles -->
+  <g opacity="0.3" stroke="url(#goldGrad)" stroke-width="1.2" fill="none">
+    <!-- Center circle -->
+    <circle cx="200" cy="200" r="35"/>
+    <!-- First ring -->
+    <circle cx="200" cy="165" r="35"/>
+    <circle cx="230" cy="182" r="35"/>
+    <circle cx="230" cy="218" r="35"/>
+    <circle cx="200" cy="235" r="35"/>
+    <circle cx="170" cy="218" r="35"/>
+    <circle cx="170" cy="182" r="35"/>
+    <!-- Second ring -->
+    <circle cx="200" cy="130" r="35"/>
+    <circle cx="230" cy="147" r="35"/>
+    <circle cx="260" cy="165" r="35"/>
+    <circle cx="260" cy="200" r="35"/>
+    <circle cx="260" cy="235" r="35"/>
+    <circle cx="230" cy="253" r="35"/>
+    <circle cx="200" cy="270" r="35"/>
+    <circle cx="170" cy="253" r="35"/>
+    <circle cx="140" cy="235" r="35"/>
+    <circle cx="140" cy="200" r="35"/>
+    <circle cx="140" cy="165" r="35"/>
+    <circle cx="170" cy="147" r="35"/>
+    <!-- Third ring (partial) -->
+    <circle cx="200" cy="95" r="35"/>
+    <circle cx="245" cy="115" r="35"/>
+    <circle cx="275" cy="147" r="35"/>
+    <circle cx="290" cy="182" r="35"/>
+    <circle cx="290" cy="218" r="35"/>
+    <circle cx="275" cy="253" r="35"/>
+    <circle cx="245" cy="285" r="35"/>
+    <circle cx="200" cy="305" r="35"/>
+    <circle cx="155" cy="285" r="35"/>
+    <circle cx="125" cy="253" r="35"/>
+    <circle cx="110" cy="218" r="35"/>
+    <circle cx="110" cy="182" r="35"/>
+    <circle cx="125" cy="147" r="35"/>
+    <circle cx="155" cy="115" r="35"/>
+  </g>
 
-  <!-- Lotus Petals (8 petals) - from Option B -->
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(0 150 150)"/>
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(45 150 150)"/>
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(90 150 150)"/>
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(135 150 150)"/>
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(180 150 150)"/>
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(225 150 150)"/>
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(270 150 150)"/>
-  <ellipse cx="150" cy="105" rx="12" ry="35" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.35" transform="rotate(315 150 150)"/>
+  <!-- Lotus Petals - Bold outer layer (from B) -->
+  <g stroke="url(#goldGrad)" stroke-width="3" fill="none">
+    <!-- 8 large pointed petals -->
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9"/>
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9" transform="rotate(45 200 200)"/>
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9" transform="rotate(90 200 200)"/>
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9" transform="rotate(135 200 200)"/>
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9" transform="rotate(180 200 200)"/>
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9" transform="rotate(225 200 200)"/>
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9" transform="rotate(270 200 200)"/>
+    <path d="M200,50 Q220,120 200,170 Q180,120 200,50" opacity="0.9" transform="rotate(315 200 200)"/>
+  </g>
 
-  <!-- Inner petals (smaller, rotated 22.5deg) -->
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(22.5 150 150)"/>
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(67.5 150 150)"/>
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(112.5 150 150)"/>
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(157.5 150 150)"/>
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(202.5 150 150)"/>
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(247.5 150 150)"/>
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(292.5 150 150)"/>
-  <ellipse cx="150" cy="118" rx="8" ry="22" fill="none" stroke="url(#goldGrad)" stroke-width="0.8" opacity="0.25" transform="rotate(337.5 150 150)"/>
+  <!-- Inner petals - smaller, rotated 22.5deg -->
+  <g stroke="url(#goldGrad)" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85"/>
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85" transform="rotate(45 200 200)"/>
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85" transform="rotate(90 200 200)"/>
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85" transform="rotate(135 200 200)"/>
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85" transform="rotate(180 200 200)"/>
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85" transform="rotate(225 200 200)"/>
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85" transform="rotate(270 200 200)"/>
+    <path d="M200,85 Q212,130 200,165 Q188,130 200,85" transform="rotate(315 200 200)"/>
+  </g>
 
-  <!-- Center glow -->
-  <circle cx="150" cy="150" r="45" fill="url(#centerGlow)"/>
-
-  <!-- Center circle -->
-  <circle cx="150" cy="150" r="38" fill="#0A0B10" stroke="url(#goldGrad)" stroke-width="2"/>
-
-  <!-- 8 small dots on circle edge -->
-  <circle cx="150" cy="112" r="2" fill="#D4A853" opacity="0.7"/>
-  <circle cx="177" cy="123" r="1.5" fill="#D4A853" opacity="0.5"/>
-  <circle cx="188" cy="150" r="2" fill="#D4A853" opacity="0.7"/>
-  <circle cx="177" cy="177" r="1.5" fill="#D4A853" opacity="0.5"/>
-  <circle cx="150" cy="188" r="2" fill="#D4A853" opacity="0.7"/>
-  <circle cx="123" cy="177" r="1.5" fill="#D4A853" opacity="0.5"/>
-  <circle cx="112" cy="150" r="2" fill="#D4A853" opacity="0.7"/>
-  <circle cx="123" cy="123" r="1.5" fill="#D4A853" opacity="0.5"/>
+  <!-- Center circle with dot (from B) -->
+  <circle cx="200" cy="200" r="30" fill="#0A0B10" stroke="url(#goldGrad)" stroke-width="3"/>
+  <circle cx="200" cy="200" r="8" fill="url(#goldGrad)"/>
 
   <!-- ST Letters -->
-  <text x="150" y="162" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="url(#goldGrad)" letter-spacing="-1">ST</text>
-
-  <!-- Subtle inner glow on text -->
-  <text x="150" y="162" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700" fill="#FFF8DC" letter-spacing="-1" opacity="0.08">ST</text>
+  <text x="200" y="208" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="url(#goldGrad)" letter-spacing="-1">ST</text>
 </svg>
