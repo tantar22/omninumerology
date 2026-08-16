@@ -38,7 +38,9 @@ export function createApp(): Express {
     // In the all-in-one Render deployment, the static Next.js export and the
     // API share one origin. The browser can therefore use its default /api/*
     // paths without CORS or environment configuration.
-    app.use(express.static(staticSiteDir));
+    // `extensions` makes a statically exported route such as /about.html
+    // available at the clean public URL /about.
+    app.use(express.static(staticSiteDir, { extensions: ['html'] }));
     app.get('*', (req: Request, res: Response, next: NextFunction) => {
       if (req.path.startsWith('/api/')) return next();
       res.sendFile(resolve(staticSiteDir, 'index.html'));

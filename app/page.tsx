@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { postJson } from '@/hooks/useMatrix';
 import { useMatrixStore } from '@/stores/useMatrixStore';
@@ -56,6 +57,20 @@ export default function Home() {
       <CosmicBackground segment={segment} />
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-10">
         <header className="mb-8 text-center">
+          <nav aria-label="Primary navigation" className="mb-8 flex flex-wrap items-center justify-center gap-2">
+            <Link
+              href="/about"
+              className="rounded-md border border-celestial-gold/40 px-3 py-2 text-sm font-medium text-celestial-gold transition-colors hover:border-celestial-gold hover:bg-celestial-gold/10"
+            >
+              About Supriya &amp; Services
+            </Link>
+            <a
+              href="#numerology-tool"
+              className="rounded-md px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:bg-white/5 hover:text-white"
+            >
+              Numerology Tool
+            </a>
+          </nav>
           <motion.h1
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,6 +78,7 @@ export default function Home() {
           >
             Omni<span className="text-celestial-gold">Numerology</span>
           </motion.h1>
+          <p className="mt-2 text-sm font-medium tracking-wide text-celestial-gold/90">Guidance by Supriya Tambe</p>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-white/60">{t('app.subtitle')}</p>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
             <LanguageSwitcher />
@@ -71,7 +87,7 @@ export default function Home() {
         </header>
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
-          <Card className="mb-8">
+          <Card id="numerology-tool" className="mb-8 scroll-mt-6">
             <CardHeader>
               <CardTitle>{t('form.title')}</CardTitle>
             </CardHeader>

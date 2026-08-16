@@ -3,9 +3,9 @@ import './globals.css';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: 'OmniNumerology',
+  title: 'OmniNumerology | Supriya Tambe',
   description:
-    'Multi-system numerological intelligence and real-time decision platform — Pythagorean, Chaldean, Vedic, Lo Shu and Kabbalah.',
+    'Personalised numerology insights and aura cleansing guidance by Supriya Tambe.',
 };
 
 export const viewport: Viewport = {
