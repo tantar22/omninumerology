@@ -125,7 +125,8 @@ export default function ToolPage() {
                   <Label htmlFor="birthTime">{t('form.birthTime')}</Label>
                   <Input
                     id="birthTime"
-                    type="time"
+                    type="text"
+                    placeholder="e.g. 11:00 PM or 23:00"
                     value={input.birthTime ?? ''}
                     onChange={(e) => setInput({ birthTime: e.target.value })}
                     className="mt-1"
