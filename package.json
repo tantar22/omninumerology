@@ -1,8 +1,8 @@
 {
-  "name": "omninumerology",
+  "name": "stnumerology",
   "version": "1.0.0",
   "private": true,
-  "description": "OmniNumerology - multi-system numerological intelligence and real-time decision platform",
+  "description": "STNumerology - multi-system numerological intelligence and real-time decision platform",
   "engines": {
     "node": "20.x"
   },

@@ -61,7 +61,7 @@ export function PdfReportButton({ targetId = 'omni-report', disabled }: PdfRepor
         heightLeft -= pageHeight;
       }
 
-      pdf.save('omninumerology-report.pdf');
+      pdf.save('stnumerology-report.pdf');
     } catch (err) {
       setError((err as Error).message || t('pdf.error'));
     } finally {

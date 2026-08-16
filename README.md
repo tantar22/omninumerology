@@ -1,8 +1,8 @@
-# OmniNumerology
+# STNumerology
 
 Multi-system numerological intelligence and real-time decision platform.
 
-OmniNumerology unifies several classical numerology systems into a single engine and
+STNumerology unifies several classical numerology systems into a single engine and
 presents the results through a wellness-oriented, trilingual interface with energy
 remedies, an oracle, a personal AI assistant, and a downloadable PDF report.
 
@@ -44,7 +44,7 @@ external arithmetic dependencies.
 
 For a simpler deployment, the included Render configuration builds that same static
 frontend and serves it from the Express app. In that all-in-one setup, opening the
-Render URL displays OmniNumerology itself and its API remains available at `/api/*`.
+Render URL displays STNumerology itself and its API remains available at `/api/*`.
 
 ## Getting started
 
@@ -113,6 +113,6 @@ See `FIREBASE_DEPLOY.md` for the full split-hosting guide. In short:
 
 ## Disclaimer
 
-OmniNumerology is provided for entertainment, reflection, and personal growth. Its
+STNumerology is provided for entertainment, reflection, and personal growth. Its
 wellness and energy content is spiritual in nature and is **not** medical, financial,
 legal, or professional advice.

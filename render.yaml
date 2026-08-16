@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: omninumerology-api
+    name: stnumerology-api
     runtime: node
     buildCommand: npm ci --include=dev && npm run build:server
     startCommand: npm run start:prod

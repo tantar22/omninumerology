@@ -1,5 +1,5 @@
 /**
- * OmniNumerology shared knowledge base.
+ * STNumerology shared knowledge base.
  *
  * A single, client-safe source of truth for the meaning of every number and
  * every numerological aspect. Used by the UI for detailed breakdowns and by the

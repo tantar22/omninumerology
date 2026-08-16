@@ -71,7 +71,7 @@ export default function ToolPage() {
             animate={{ opacity: 1, y: 0 }}
             className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl"
           >
-            Omni<span className="text-celestial-gold">Numerology</span>
+            ST<span className="text-celestial-gold">Numerology</span>
           </motion.h1>
           <p className="mt-2 text-sm font-medium tracking-wide text-celestial-gold/90">Guidance by Supriya Tambe</p>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-white/60">{t('app.subtitle')}</p>

@@ -2,7 +2,7 @@
  * Assistant knowledge base — structured, localized reference content that powers
  * the in-app AI assistant's local (deterministic) answers.
  *
- * Every entry covers a topic in the OmniNumerology universe: app tabs and their
+ * Every entry covers a topic in the STNumerology universe: app tabs and their
  * terminology, numerology systems, Vedic/planetary astrology, Reiki, Panchatatva,
  * aura, and synastry. All interpretive copy is wellness-toned and explicitly not
  * medical advice.

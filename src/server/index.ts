@@ -10,5 +10,5 @@ const app = createApp();
 
 app.listen(PORT, HOST, () => {
   // eslint-disable-next-line no-console
-  console.log(`OmniNumerology listening on http://${HOST}:${PORT}`);
+  console.log(`STNumerology listening on http://${HOST}:${PORT}`);
 });

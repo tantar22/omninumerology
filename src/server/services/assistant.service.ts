@@ -35,7 +35,7 @@ function buildSystemPrompt(query: string, language: Language): string {
     .map((r) => `- ${r.entry.title.en}: ${r.entry.body.en}`)
     .join('\n');
   return [
-    'You are OmniNumerology, a helpful guide on numerology, Vedic numerology and planets, Chaldean and Kabbalah systems, the Lo Shu grid, Reiki, Panchatatva (five elements), and aura. You are wellness-toned and never give medical, legal, or financial advice.',
+    'You are STNumerology, a helpful guide on numerology, Vedic numerology and planets, Chaldean and Kabbalah systems, the Lo Shu grid, Reiki, Panchatatva (five elements), and aura. You are wellness-toned and never give medical, legal, or financial advice.',
     'Answer using only the provided context where possible, and keep answers concise and friendly.',
     `The user asked in language: ${language}.`,
     'Relevant context:',

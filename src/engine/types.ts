@@ -1,5 +1,5 @@
 /**
- * Core shared types and pure arithmetic primitives for the OmniNumerology engine.
+ * Core shared types and pure arithmetic primitives for the STNumerology engine.
  *
  * This module intentionally has ZERO external dependencies: every function is a
  * deterministic pure TypeScript computation over strings and numbers.

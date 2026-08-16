@@ -1,5 +1,5 @@
 /**
- * OmniNumerology calculation engine — unified entry point.
+ * STNumerology calculation engine — unified entry point.
  *
  * `calculateUnifiedMatrix` runs every tradition deterministically over a single
  * input and returns one complete, serializable result object.

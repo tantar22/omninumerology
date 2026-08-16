@@ -31,7 +31,7 @@ export default function HomePage() {
       <div className="relative z-10 mx-auto max-w-6xl px-4 py-8 sm:py-12">
         <nav aria-label="Primary navigation" className="mb-12 flex items-center justify-between gap-4">
           <Link href="/" className="font-serif text-xl font-bold text-white transition-colors hover:text-celestial-gold">
-            Omni<span className="text-celestial-gold">Numerology</span>
+            ST<span className="text-celestial-gold">Numerology</span>
           </Link>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />

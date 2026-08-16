@@ -22,7 +22,7 @@ export function createApp(): Express {
   app.get('/api/health', (_req: Request, res: Response) => {
     res.json({
       status: 'ok',
-      service: 'omninumerology',
+      service: 'stnumerology',
       time: new Date().toISOString(),
     });
   });
@@ -50,7 +50,7 @@ export function createApp(): Express {
     app.get('/', (_req: Request, res: Response) => {
       res.json({
         status: 'ok',
-        service: 'omninumerology-api',
+        service: 'stnumerology-api',
         frontend: 'not built',
         health: '/api/health',
       });

@@ -1,8 +1,8 @@
 {
-  "name": "omninumerology-functions",
+  "name": "stnumerology-functions",
   "version": "1.0.0",
   "private": true,
-  "description": "OmniNumerology API as a Firebase Cloud Function",
+  "description": "STNumerology API as a Firebase Cloud Function",
   "main": "index.js",
   "engines": {
     "node": "20"

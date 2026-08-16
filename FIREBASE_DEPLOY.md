@@ -1,6 +1,6 @@
-# Deploying OmniNumerology (Free Split Hosting)
+# Deploying STNumerology (Free Split Hosting)
 
-OmniNumerology uses a **split-hosting** architecture to stay entirely free:
+STNumerology uses a **split-hosting** architecture to stay entirely free:
 
 - **Frontend** — Next.js static export (`out/`) served by **Firebase Hosting (Spark plan, free)**.
 - **Backend** — the Express API (`src/server`) deployed separately to any free Node.js host
@@ -34,8 +34,8 @@ Pick any free Node.js host. The backend needs only `express`, `cors`, and `zod`.
 A `Dockerfile` is included. Build and run:
 
 ```bash
-docker build -t omninumerology-api .
-docker run -p 4000:4000 -e PORT=4000 omninumerology-api
+docker build -t stnumerology-api .
+docker run -p 4000:4000 -e PORT=4000 stnumerology-api
 ```
 
 Push the image to your host's registry and deploy. The container exposes port `4000`.
@@ -53,20 +53,20 @@ npm run start:prod
 This compiles the server to `dist/` and runs `dist/server/index.js` on `$PORT` (default `4000`).
 
 Whichever option you choose, note the **public URL** of the running API, e.g.
-`https://omninumerology-api.onrender.com`.
+`https://stnumerology-api.onrender.com`.
 
 ## Step 2 — Build the frontend against that URL
 
 Set `NEXT_PUBLIC_API_BASE` to the backend URL and export the static site:
 
 ```bash
-NEXT_PUBLIC_API_BASE=https://omninumerology-api.onrender.com npm run export
+NEXT_PUBLIC_API_BASE=https://stnumerology-api.onrender.com npm run export
 ```
 
 This inlines the backend URL into the static bundle in `out/`. Confirm it took effect:
 
 ```bash
-grep -rl "omninumerology-api.onrender.com" out/_next/static/chunks/ | head
+grep -rl "stnumerology-api.onrender.com" out/_next/static/chunks/ | head
 ```
 
 ## Step 3 — Deploy the frontend to Firebase Hosting (free)
@@ -92,7 +92,7 @@ You can also run `firebase deploy` (hosting is now the only target in `firebase.
 
 ```bash
 # Backend health
-curl https://omninumerology-api.onrender.com/api/health
+curl https://stnumerology-api.onrender.com/api/health
 
 # Frontend served
 curl https://<your-project>.web.app/
