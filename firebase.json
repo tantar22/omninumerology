@@ -3,6 +3,7 @@
     "public": "out",
     "predeploy": ["npm run export"],
     "rewrites": [
+      { "source": "/tool", "destination": "/tool.html" },
       { "source": "**", "destination": "/index.html" }
     ]
   }
