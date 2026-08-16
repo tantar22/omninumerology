@@ -183,7 +183,40 @@ export type UiKey =
   | 'assistant.suggest.panchatatva'
   | 'assistant.suggest.planets'
   | 'assistant.open'
-  | 'assistant.close';
+  | 'assistant.close'
+  | 'about.hero.badge'
+  | 'about.hero.title'
+  | 'about.hero.welcome'
+  | 'about.hero.name'
+  | 'about.hero.desc'
+  | 'about.hero.exploreServices'
+  | 'about.hero.useTool'
+  | 'about.card.title'
+  | 'about.card.p1'
+  | 'about.card.p2'
+  | 'about.card.disclaimer'
+  | 'about.services.label'
+  | 'about.services.title'
+  | 'about.services.desc'
+  | 'about.services.reading.title'
+  | 'about.services.reading.desc'
+  | 'about.services.name.title'
+  | 'about.services.name.desc'
+  | 'about.services.vedic.title'
+  | 'about.services.vedic.desc'
+  | 'about.services.aura.title'
+  | 'about.services.aura.desc'
+  | 'about.process.label'
+  | 'about.process.title'
+  | 'about.process.step1.title'
+  | 'about.process.step1.desc'
+  | 'about.process.step2.title'
+  | 'about.process.step2.desc'
+  | 'about.process.step3.title'
+  | 'about.process.step3.desc'
+  | 'about.cta.title'
+  | 'about.cta.desc'
+  | 'about.cta.button';
 
 type StringMap = Record<UiKey, string>;
 
@@ -380,6 +413,39 @@ const EN: StringMap = {
   'assistant.suggest.planets': 'Which planet rules each number?',
   'assistant.open': 'Open assistant',
   'assistant.close': 'Close assistant',
+  'about.hero.badge': 'Numerology & Aura Cleansing',
+  'about.hero.title': 'Guidance that helps you reconnect with your inner direction.',
+  'about.hero.welcome': "Welcome — I'm",
+  'about.hero.name': 'Supriya Tambe',
+  'about.hero.desc': 'Through numerology and aura cleansing, I offer a gentle space for reflection, self-understanding, and intentional next steps.',
+  'about.hero.exploreServices': 'Explore services',
+  'about.hero.useTool': 'Use the numerology tool',
+  'about.card.title': 'A thoughtful, grounded approach',
+  'about.card.p1': 'Supriya has completed training in numerology and aura cleansing. Her practice brings these traditions together with attentive listening and practical, everyday reflection.',
+  'about.card.p2': 'Each session is personal, confidential, and focused on the questions that matter most to you.',
+  'about.card.disclaimer': 'These services are intended for spiritual reflection and personal wellbeing. They do not replace medical, mental-health, legal, or financial advice.',
+  'about.services.label': 'Services',
+  'about.services.title': 'Support for your unique journey',
+  'about.services.desc': 'Choose a focused reading or combine areas in a session that is shaped around your current intention.',
+  'about.services.reading.title': 'Personal Numerology Reading',
+  'about.services.reading.desc': 'A thoughtful reading of your core numbers, life path, personal cycles, and the themes that may support reflection and clarity.',
+  'about.services.name.title': 'Name & Business Numerology',
+  'about.services.name.desc': 'Explore the energetic patterns in a name, with practical guidance for personal, professional, or business identity choices.',
+  'about.services.vedic.title': 'Lo Shu & Vedic Insights',
+  'about.services.vedic.desc': 'Discover patterns through the Lo Shu grid and Vedic number traditions, including strengths, missing numbers, and balancing practices.',
+  'about.services.aura.title': 'Aura Cleansing & Energy Balancing',
+  'about.services.aura.desc': 'Gentle, wellness-oriented practices intended to support calm, grounding, and a renewed sense of personal space.',
+  'about.process.label': 'What to expect',
+  'about.process.title': 'A clear, personal process',
+  'about.process.step1.title': 'Share your details',
+  'about.process.step1.desc': 'Bring your name and birth details so the session can be personal to you.',
+  'about.process.step2.title': 'Receive your reading',
+  'about.process.step2.desc': 'Explore your numbers and questions in a calm, supportive conversation.',
+  'about.process.step3.title': 'Take aligned next steps',
+  'about.process.step3.desc': 'Leave with reflections and simple practices to carry into everyday life.',
+  'about.cta.title': 'Start with your numbers',
+  'about.cta.desc': 'Use the OmniNumerology tool to explore your core number patterns, then bring your questions to a personal session with Supriya.',
+  'about.cta.button': 'Explore my numerology',
 };
 
 const HI: StringMap = {
@@ -574,6 +640,39 @@ const HI: StringMap = {
   'assistant.suggest.planets': 'प्रत्येक अंक पर कौन सा ग्रह शासन करता है?',
   'assistant.open': 'सहायक खोलें',
   'assistant.close': 'सहायक बंद करें',
+  'about.hero.badge': 'अंकज्योतिष और औरा शुद्धिकरण',
+  'about.hero.title': 'मार्गदर्शन जो आपको अपनी आंतरिक दिशा से फिर से जोड़ने में मदद करता है।',
+  'about.hero.welcome': 'स्वागत है — मैं हूँ',
+  'about.hero.name': 'सुप्रिया तांबे',
+  'about.hero.desc': 'अंकज्योतिष और औरा शुद्धिकरण के माध्यम से, मैं चिंतन, आत्म-समझ और सचेत अगले कदमों के लिए एक कोमल स्थान प्रदान करती हूँ।',
+  'about.hero.exploreServices': 'सेवाएं देखें',
+  'about.hero.useTool': 'अंकज्योतिष टूल का उपयोग करें',
+  'about.card.title': 'एक विचारशील, स्थिर दृष्टिकोण',
+  'about.card.p1': 'सुप्रिया ने अंकज्योतिष और औरा शुद्धिकरण में प्रशिक्षण पूरा कर लिया है। उनकी अभ्यास शैली इन परंपराओं को ध्यानपूर्वक सुनने और व्यावहारिक, रोज़मर्रा के चिंतन के साथ जोड़ती है।',
+  'about.card.p2': 'प्रत्येक सत्र व्यक्तिगत, गोपनीय है, और उन प्रश्नों पर केंद्रित है जो आपके लिए सबसे महत्वपूर्ण हैं।',
+  'about.card.disclaimer': 'ये सेवाएं आध्यात्मिक चिंतन और व्यक्तिगत कल्याण के लिए हैं। ये चिकित्सा, मानसिक-स्वास्थ्य, कानूनी या वित्तीय सलाह का विकल्प नहीं हैं।',
+  'about.services.label': 'सेवाएं',
+  'about.services.title': 'आपकी अनूठी यात्रा के लिए सहायता',
+  'about.services.desc': 'एक केंद्रित रीडिंग चुनें या अपनी वर्तमान अभिप्रेरा के अनुसार सत्र में क्षेत्रों को जोड़ें।',
+  'about.services.reading.title': 'व्यक्तिगत अंकज्योतिष रीडिंग',
+  'about.services.reading.desc': 'आपकी मूल संख्याओं, जीवन पथ, व्यक्तिगत चक्रों और उन विषयों की विचारशील रीडिंग जो चिंतन और स्पष्टता का समर्थन कर सकते हैं।',
+  'about.services.name.title': 'नाम और व्यापार अंकज्योतिष',
+  'about.services.name.desc': 'किसी नाम में ऊर्जात्मक पैटर्न का पता लगाएं, व्यक्तिगत, पेशेवर या व्यापार पहचान विकल्पों के लिए व्यावहारिक मार्गदर्शन के साथ।',
+  'about.services.vedic.title': 'लो शु और वैदिक अंतर्दृष्टि',
+  'about.services.vedic.desc': 'लो शु ग्रिड और वैदिक संख्या परंपराओं के माध्यम से पैटर्न की खोज करें, जिसमें शक्तियां, गायब संख्याएं और संतुलन अभ्यास शामिल हैं।',
+  'about.services.aura.title': 'औरा शुद्धिकरण और ऊर्जा संतुलन',
+  'about.services.aura.desc': 'शांति, स्थिरता और व्यक्तिगत स्थान के नवीनीकृत अर्थ को समर्थन देने के लिए कोमल, कल्याण-उन्मुख प्रथाएं।',
+  'about.process.label': 'क्या उम्मीद करें',
+  'about.process.title': 'एक स्पष्ट, व्यक्तिगत प्रक्रिया',
+  'about.process.step1.title': 'अपना विवरण साझा करें',
+  'about.process.step1.desc': 'अपना नाम और जन्म विवरण लाएं ताकि सत्र आपके लिए व्यक्तिगत हो सके।',
+  'about.process.step2.title': 'अपनी रीडिंग प्राप्त करें',
+  'about.process.step2.desc': 'एक शांत, सहायक बातचीत में अपनी संख्याओं और प्रश्नों का पता लगाएं।',
+  'about.process.step3.title': 'संरेखित अगले कदम उठाएं',
+  'about.process.step3.desc': 'चिंतन और रोज़मर्रा के जीवन में ले जाने के लिए सरल अभ्यासों के साथ जाएं।',
+  'about.cta.title': 'अपनी संख्याओं से शुरू करें',
+  'about.cta.desc': 'अपने मूल संख्या पैटर्न का पता लगाने के लिए ओम्नीअंकज्योतिष टूल का उपयोग करें, फिर सुप्रिया के साथ व्यक्तिगत सत्र में अपने प्रश्न लाएं।',
+  'about.cta.button': 'मेरा अंकज्योतिष देखें',
 };
 
 const MR: StringMap = {
@@ -768,6 +867,39 @@ const MR: StringMap = {
   'assistant.suggest.planets': 'प्रत्येक अंकावर कोणता ग्रह राज्य करतो?',
   'assistant.open': 'सहाय्यक उघडा',
   'assistant.close': 'सहाय्यक बंद करा',
+  'about.hero.badge': 'अंकज्योतिष और औरा शुद्धीकरण',
+  'about.hero.title': 'मार्गदर्शन जे तुम्हाला तुमच्या अंतर्गत दिशेशी पुन्हा जोडते.',
+  'about.hero.welcome': 'स्वागत आहे — मी आहे',
+  'about.hero.name': 'सुप्रिया तांबे',
+  'about.hero.desc': 'अंकज्योतिष आणि औरा शुद्धीकरणाद्वारे, मी चिंतन, स्वतःच्या समजुनी आणि जाणूनबुजून पुढच्या पावलांसाठी एकाच शांत जागा प्रदान करते.',
+  'about.hero.exploreServices': 'सेवा पहा',
+  'about.hero.useTool': 'अंकज्योतिष साधन वापरून पहा',
+  'about.card.title': 'एक विचारशील, स्थिर दृष्टिकोन',
+  'about.card.p1': 'सुप्रिया यांनी अंकज्योतिष आणि औरा शुद्धीकरणातील प्रशिक्षण पूर्ण केले आहे. त्यांचा अभ्यास या परंपरांना लक्षपूर्वक ऐकण्यासह आणि व्यवहार्य, दररोजच्या चिंतनासह जोडतो.',
+  'about.card.p2': 'प्रत्येक सत्र वैयक्तिक, गोपनीय असते, आणि तुमच्यासाठी सर्वात महत्त्वाच्या प्रश्नांवर केंद्रित असते.',
+  'about.card.disclaimer': 'ही सेवा आध्यात्मिक चिंतन आणि वैयक्तिक कल्याणासाठी आहेत. ती वैद्यकीय, मानसिक-आरोग्य, कायदेशीर किंवा आर्थिक सल्ल्याचा पर्याय नाहीत.',
+  'about.services.label': 'सेवा',
+  'about.services.title': 'तुमच्या अद्वितीय प्रवासासाठी सहाय्य',
+  'about.services.desc': 'एक केंद्रित रीडिंग निवडा किंवा तुमच्या सध्याच्या इच्छेनुसार सत्रात क्षेत्रे जोडा.',
+  'about.services.reading.title': 'वैयक्तिक अंकज्योतिष रीडिंग',
+  'about.services.reading.desc': 'तुमच्या मूळ संख्या, जीवन मार्ग, वैयक्तिक चक्र आणि त्या विषयांचे विचारशील वाचन जे चिंतन आणि स्पष्टता यांना समर्थन देऊ शकतात.',
+  'about.services.name.title': 'नाव आणि व्यवसाय अंकज्योतिष',
+  'about.services.name.desc': 'नावातील ऊर्जात्मक नमुने शोधा, वैयक्तिक, व्यावसायिक किंवा व्यवसाय ओळख पर्यायांसाठी व्यवहार्य मार्गदर्शनासह.',
+  'about.services.vedic.title': 'लो शु आणि वैदिक अंतर्दृष्टी',
+  'about.services.vedic.desc': 'लो शु ग्रिड आणि वैदिक संख्या परंपरांद्वारे नमुने शोधा, ज्यात शक्ती, गायब संख्या आणि संतुलन सराव समाविष्ट आहेत.',
+  'about.services.aura.title': 'औरा शुद्धीकरण आणि ऊर्जा संतुलन',
+  'about.services.aura.desc': 'शांतता, स्थिरता आणि वैयक्तिक जागेच्या नवीनीकृत भावनेला समर्थन देण्यासाठी कोमल, कल्याण-केंद्रित सराव.',
+  'about.process.label': 'काय अपेक्षा करावी',
+  'about.process.title': 'एक स्पष्ट, वैयक्तिक प्रक्रिया',
+  'about.process.step1.title': 'तुमचा तपशील सामायिक करा',
+  'about.process.step1.desc': 'सत्र तुमच्यासाठी वैयक्तिक असल्यास तुमचे नाव आणि जन्मतारीख आणा.',
+  'about.process.step2.title': 'तुमची रीडिंग मिळवा',
+  'about.process.step2.desc': 'एका शांत, आधारभूत संवादात तुमच्या संख्या आणि प्रश्नांचा शोध लावा.',
+  'about.process.step3.title': 'जुळलेले पुढचे पावले उचला',
+  'about.process.step3.desc': 'चिंतन आणि दररोजच्या जीवनात नेण्यासाठी सोप्या सरावांसह जा.',
+  'about.cta.title': 'तुमच्या संख्यांसह सुरू करा',
+  'about.cta.desc': 'तुमचे मूळ संख्या नमुने शोधण्यासाठी ओम्नीअंकज्योतिष साधन वापरा, मग सुप्रिया यांच्यासोबत वैयक्तिक सत्रात तुमचे प्रश्न आणा.',
+  'about.cta.button': 'माझे अंकज्योतिष पहा',
 };
 
 export const UI_STRINGS: Record<Language, StringMap> = { en: EN, hi: HI, mr: MR };
