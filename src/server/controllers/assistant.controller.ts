@@ -8,7 +8,7 @@ const assistantSchema = z.object({
   message: z.string().trim().min(1, 'message is required'),
   stream: z.boolean().optional(),
   language: z.string().optional(),
-  matrix: z.record(z.unknown()).optional(),
+  matrix: z.record(z.unknown()).nullable().optional(),
 });
 
 /** POST /api/assistant/chat — hybrid local-knowledge + optional-LLM guide. */

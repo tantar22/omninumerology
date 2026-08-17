@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { useT } from '@/lib/i18n-client';
 import type { UnifiedMatrix } from '@/engine';
-import type { jsPDF } from 'jspdf';
+import { jsPDF } from 'jspdf';
 import { useMatrixStore } from '@/stores/useMatrixStore';
 
 interface PdfReportButtonProps {
@@ -179,8 +179,6 @@ function checkPage(doc:jsPDF, y: number, needed: number): number {
 // ─── Main PDF generator ──────────────────────────────────────────────────────
 
 async function generateDetailedPdf(matrix: UnifiedMatrix) {
-  const jsPdfModule = await import('jspdf');
-  const jsPDF = (jsPdfModule.jsPDF ?? jsPdfModule.default) as typeof import('jspdf').jsPDF;
   const doc = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
 
   // ─── Cover Page ──────────────────────────────────────────────────────────
@@ -719,7 +717,7 @@ export function PdfReportButton({ disabled }: PdfReportButtonProps) {
     setError(null);
     setBusy(true);
     try {
-      generateDetailedPdf(matrix);
+      await generateDetailedPdf(matrix);
     } catch (err) {
       setError((err as Error).message || t('pdf.error'));
     } finally {
